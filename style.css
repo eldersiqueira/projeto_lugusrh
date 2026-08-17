@@ -139,7 +139,7 @@ body {
 }
 
 .mockup-placeholder {
-    width: 100%;
+    width: 80%;
     height: 250px;
     background: rgba(255,255,255,0.1);
     border: 2px dashed rgba(255,255,255,0.3);
