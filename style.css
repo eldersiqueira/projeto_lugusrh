@@ -1,19 +1,16 @@
-
 /* =========================================
-   1. VARIÁVEIS GLOBAIS E RESET
+   1. VARIÁVEIS GLOBAIS (paleta LUGUS)
+   Baseadas na logo: azul-marinho + dourado
 ========================================= */
 :root {
-    --cor-primaria: #072d44; /* Tom escuro e corporativo */
-    --cor-secundaria: #00d4ff; /* Tom ciano para chamadas de ação */
+    --cor-primaria: #16233f;          /* Azul-marinho da logo */
+    --cor-primaria-clara: #24365c;    /* variação p/ gradiente/hover */
+    --cor-secundaria: #bfa15a;        /* Dourado da logo */
+    --cor-secundaria-escura: #a4863f; /* hover do dourado */
     --cor-texto: #333333;
     --cor-fundo: #f8f9fa;
+    --cor-fundo-secao: #eef1f5;       /* fundo cinza-azulado das seções alternadas */
     --fonte-principal: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -23,182 +20,496 @@ body {
     line-height: 1.6;
 }
 
-/* Container flexível para alinhar o conteúdo */
-.container {
-    width: 100%;
-    padding: 0 20px;
-    margin: 0 auto;
+.eyebrow {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cor-primaria);
+    font-weight: 700;
+    margin-bottom: 2.5rem;
 }
 
 /* =========================================
-   2. MOBILE FIRST (Layout Base - 375px)
+   2. HEADER / NAVBAR
 ========================================= */
-
-/* Cabeçalho Fixo (Sticky) */
-.header {
-    background-color: #ffffff;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+.logo-img {
+    max-height: 48px;
+    width: auto;
 }
 
-.header .container {
-    display: flex;
-    justify-content: space-between;
+.navbar .nav-link {
+    color: var(--cor-primaria);
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.navbar .nav-link:hover {
+    color: var(--cor-secundaria-escura);
+}
+
+.btn-whatsapp-nav {
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--cor-fundo-secao);
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+    transition: background-color .3s ease, color .3s ease;
 }
 
-.logo {
-    font-size: 1.5rem;
+.btn-whatsapp-nav:hover {
+    background-color: var(--cor-secundaria);
+    color: #ffffff;
+}
+
+/* Botão de Chamada para Ação (CTA) - navy sólido usado no banner e contato */
+.btn-cta-escuro {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
     font-weight: 700;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color .3s ease;
+}
+
+.btn-cta-escuro:hover {
+    background-color: var(--cor-primaria-clara);
+    color: #ffffff;
+}
+
+/* =========================================
+   3. WORDMARK CENTRAL
+========================================= */
+.wordmark-block {
+    background-color: #ffffff;
+}
+
+.wordmark {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: var(--cor-primaria);
+    margin-bottom: .25rem;
+}
+
+.wordmark-sub {
+    letter-spacing: 4px;
+    color: var(--cor-secundaria-escura);
+    font-weight: 600;
+    font-size: .85rem;
+    margin-bottom: .5rem;
+}
+
+.wordmark-tagline {
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: 2px;
+    color: #6c757d;
+}
+
+/* =========================================
+   4. HERO
+========================================= */
+.hero-section {
+    padding: 60px 0 100px;
+    background-color: var(--cor-fundo-secao);
     color: var(--cor-primaria);
 }
 
-/* Botão Hamburger */
-.menu-hamburger {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.menu-hamburger .linha {
-    width: 25px;
-    height: 3px;
-    background-color: var(--cor-primaria);
-    border-radius: 2px;
-    transition: 0.3s ease;
-}
-
-/* Menu de Navegação (Oculto no Mobile por padrão) */
-.nav-menu {
-    display: none; /* Será controlado via JavaScript */
-    width: 100%;
-    background-color: #ffffff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.nav-menu ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: var(--cor-texto);
-    font-weight: 500;
-}
-
-/* Botão de Chamada para Ação (CTA) */
-.btn-cta, .btn-primario {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: var(--cor-secundaria);
-    color: #072d44;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    text-align: center;
-    margin-top: 15px;
-    transition: background 0.3s ease;
-}
-
-/* Hero Section (Fluxo Vertical Linha Única) */
-.hero-section {
-    padding: 50px 0;
-    background-color: var(--cor-primaria);
-    color: #ffffff;
-    text-align: center;
-}
-
-.hero-grid {
-    display: flex;
-    flex-direction: column; /* Empilha os elementos no celular */
-    gap: 30px;
-}
-
 .hero-copy h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     line-height: 1.2;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-weight: 800;
 }
 
-.hero-copy p {
-    font-size: 1rem;
-    opacity: 0.9;
+.hero-copy .lead {
+    color: #4a5568;
 }
 
-.mockup-placeholder {
-    width: 80%;
-    height: 250px;
-    background: rgba(255,255,255,0.1);
-    border: 2px dashed rgba(255,255,255,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
+.hero-foto-wrap {
+    margin-bottom: -80px;
+}
+
+.hero-foto {
+    border-radius: 12px;
+    max-width: 320px;
+    box-shadow: 0 15px 30px rgba(22, 35, 63, .25);
+}
+
+@media (min-width: 1024px) {
+    .hero-copy h1 {
+        font-size: 3rem;
+    }
 }
 
 /* =========================================
-   3. DESKTOP (Media Query - > 1024px)
+   5. BANNER DE CTAs
 ========================================= */
-@media (min-width: 1024px) {
-    .container {
-        max-width: 1200px;
+.cta-banner-section {
+    padding: 40px 0 60px;
+}
+
+.cta-banner {
+    background-color: var(--cor-fundo-secao);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.cta-texto p {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    color: var(--cor-primaria);
+}
+
+/* =========================================
+   6. LUGUS RH — CARROSSEL
+========================================= */
+.lugus-rh-section {
+    background-color: var(--cor-fundo-secao);
+}
+
+.lugus-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.carousel-label {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cor-primaria);
+    font-weight: 600;
+    max-width: 160px;
+}
+
+.carousel-label i {
+    font-size: 1.4rem;
+}
+
+.carousel-center {
+    max-width: 420px;
+}
+
+.carousel-icon {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--cor-secundaria-escura);
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 25px rgba(22, 35, 63, .1);
+}
+
+.carousel-title {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.carousel-content p {
+    margin-bottom: 4px;
+    color: #4a5568;
+    font-size: .95rem;
+}
+
+.carousel-dots {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #c7cdd6;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--cor-secundaria-escura);
+}
+
+@media (max-width: 767px) {
+    .lugus-carousel {
+        flex-direction: column;
     }
 
-    /* Esconde o menu hamburger na versão Web Desktop */
-    .menu-hamburger {
-        display: none; 
+    .carousel-label span {
+        display: none;
     }
+}
 
-    /* Exibe a barra de navegação expandida */
-    .nav-menu {
-        display: flex;
-        position: static; /* Retira o comportamento absoluto do mobile */
-        width: auto;
-        padding: 0;
-        box-shadow: none;
-        align-items: center;
-        gap: 30px;
-    }
+/* =========================================
+   7. SERVIÇOS
+========================================= */
+.servico-icone {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--cor-fundo-secao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin: 0 auto 15px;
+}
 
-    .nav-menu ul {
-        flex-direction: row; /* Coloca os links lado a lado */
-        gap: 25px;
-    }
+.servico-item h5 {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
 
-    .btn-cta {
-        margin-top: 0; /* Remove a margem superior usada no mobile */
-    }
+.btn-saiba-mais {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+}
 
-    /* Hero Section (Grade Multicolunas Expandida) */
-    .hero-grid {
-        flex-direction: row; /* Coloca texto e imagem lado a lado */
-        align-items: center;
-        text-align: left;
-    }
+.btn-saiba-mais:hover {
+    background-color: var(--cor-secundaria-escura);
+    color: #ffffff;
+}
 
-    .hero-copy {
-        flex: 1; /* Ocupa 50% do espaço */
-        padding-right: 40px;
-    }
+/* =========================================
+   8. CONTATO (CTA + REDES)
+========================================= */
+.contato-cta-section {
+    background-color: #ffffff;
+}
 
-    .hero-imagem {
-        flex: 1; /* Ocupa os outros 50% do espaço */
-    }
+.redes-box {
+    border: 1px solid #d9dee5;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-    .hero-copy h1 {
-        font-size: 3.5rem;
-    }
+.rede-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--cor-primaria);
+    font-size: .85rem;
+    text-decoration: none;
+}
+
+.rede-icone {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    background-color: var(--cor-fundo-secao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--cor-primaria);
+}
+
+.rede-item:hover .rede-icone {
+    background-color: var(--cor-secundaria);
+    color: #ffffff;
+}
+
+/* =========================================
+   9. PÁGINA DE DETALHE DO SERVIÇO
+========================================= */
+.servico-hero-section {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.servico-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .9rem;
+    margin-bottom: 30px;
+}
+
+.servico-voltar:hover {
+    color: #ffffff;
+}
+
+.servico-hero-icone {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: var(--cor-secundaria);
+    margin: 0 auto 20px;
+}
+
+.servico-hero-section h1 {
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.servico-hero-subtitulo {
+    color: var(--cor-secundaria);
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.servico-detalhe-section {
+    background-color: var(--cor-fundo-secao);
+}
+
+.servico-coluna {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 8px 20px rgba(22, 35, 63, .06);
+}
+
+.servico-coluna h3 {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.servico-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.servico-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    color: #4a5568;
+}
+
+.servico-lista i {
+    color: var(--cor-secundaria-escura);
+    margin-top: 3px;
+}
+
+.servico-cta {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.servico-cta p {
+    color: var(--cor-primaria);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   10. FOOTER
+========================================= */
+.footer {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+}
+
+.footer-logo {
+    max-height: 60px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.footer-contato-lista li {
+    margin-bottom: 6px;
+    opacity: .9;
+    font-size: .9rem;
+}
+
+.footer-contato-lista i {
+    color: var(--cor-secundaria);
+    margin-right: 8px;
+    width: 16px;
+}
+
+.footer-sobre p {
+    font-size: .85rem;
+    opacity: .85;
+}
+
+.footer-titulo {
+    color: var(--cor-secundaria);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-lista li {
+    margin-bottom: 8px;
+}
+
+.footer-lista a {
+    color: #ffffff;
+    opacity: .85;
+    text-decoration: none;
+    font-size: .9rem;
+}
+
+.footer-lista a:hover {
+    opacity: 1;
+    color: var(--cor-secundaria);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .15);
+    padding-top: 20px;
+    font-size: .85rem;
+    opacity: .8;
+}
+
+.footer-politica {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-politica:hover {
+    color: var(--cor-secundaria);
 }
