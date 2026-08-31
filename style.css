@@ -92,12 +92,9 @@ body {
     background-color: #ffffff;
 }
 
-.wordmark {
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: 6px;
-    color: var(--cor-primaria);
-    margin-bottom: .25rem;
+.wordmark-logo {
+    max-height: 90px;
+    width: auto;
 }
 
 .wordmark-sub {
@@ -164,6 +161,11 @@ body {
     padding: 40px;
 }
 
+.cta-logo-img {
+    max-height: 300px;
+    width: auto;
+}
+
 .cta-texto p {
     margin-bottom: .5rem;
     font-weight: 500;
@@ -185,23 +187,42 @@ body {
     text-align: center;
 }
 
-.carousel-label {
-    background: none;
-    border: none;
+.carousel-nav-group {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--cor-primaria);
-    font-weight: 600;
-    max-width: 160px;
 }
 
-.carousel-label i {
+.carousel-arrow {
+    background: none;
+    border: none;
+    color: var(--cor-primaria);
     font-size: 1.4rem;
+    line-height: 1;
+    padding: 6px;
+}
+
+.carousel-arrow:hover {
+    color: var(--cor-secundaria-escura);
+}
+
+.carousel-label {
+    display: block;
+    color: var(--cor-primaria);
+    font-weight: 600;
+    text-decoration: none;
+    max-width: 140px;
+}
+
+.carousel-label:hover {
+    color: var(--cor-secundaria-escura);
+    text-decoration: underline;
 }
 
 .carousel-center {
     max-width: 420px;
+    text-decoration: none;
+    display: block;
 }
 
 .carousel-icon {
@@ -340,6 +361,23 @@ body {
 .rede-item:hover .rede-icone {
     background-color: var(--cor-secundaria);
     color: #ffffff;
+}
+
+.sobre-foto {
+    border-radius: 12px;
+    max-width: 260px;
+}
+
+.lead-destaque {
+    color: var(--cor-secundaria-escura);
+    font-weight: 600;
+}
+
+.servico-hero-subtitulo-claro {
+    color: #6c757d;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* =========================================

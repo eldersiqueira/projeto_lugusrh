@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const slides = [
         {
             label: 'Sobre a LUGUS RH',
+            anchor: 'sobre',
             icon: 'bi-building',
             title: 'Sobre a LUGUS RH',
             content: [
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             label: 'Principais Trabalhos',
+            anchor: 'trabalhos',
             icon: 'bi-people',
             title: 'Principais Trabalhos',
             content: [
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             label: 'Nossos Pilares',
+            anchor: 'pilares',
             icon: 'bi-diagram-3',
             title: 'Nossos Pilares',
             content: [
@@ -44,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const contentEl = document.getElementById('slideContent');
     const labelPrevEl = document.getElementById('labelPrev');
     const labelNextEl = document.getElementById('labelNext');
+    const labelPrevLinkEl = document.getElementById('labelPrevLink');
+    const labelNextLinkEl = document.getElementById('labelNextLink');
+    const centerLinkEl = document.getElementById('carouselCenterLink');
     const dotsEls = document.querySelectorAll('#slideDots .dot');
     const btnPrev = document.getElementById('btnPrev');
     const btnNext = document.getElementById('btnNext');
@@ -58,6 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
         contentEl.innerHTML = slide.content.map(linha => `<p>${linha}</p>`).join('');
         labelPrevEl.textContent = prevSlide.label;
         labelNextEl.textContent = nextSlide.label;
+
+        if (centerLinkEl) centerLinkEl.href = `lugus-rh.html#${slide.anchor}`;
+        if (labelPrevLinkEl) labelPrevLinkEl.href = `lugus-rh.html#${prevSlide.anchor}`;
+        if (labelNextLinkEl) labelNextLinkEl.href = `lugus-rh.html#${nextSlide.anchor}`;
 
         dotsEls.forEach((dot, i) => {
             dot.classList.toggle('active', i === current);
@@ -76,7 +86,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         dotsEls.forEach((dot) => {
-            dot.addEventListener('click', function () {
+            dot.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
                 current = parseInt(this.dataset.index, 10);
                 render();
             });

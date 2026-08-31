@@ -60,7 +60,7 @@
 
     <!-- WORDMARK CENTRAL -->
     <div class="wordmark-block text-center py-4">
-        <h2 class="wordmark">LUGUS</h2>
+        <img src="logo - lugus.jpeg" alt="LUGUS Consultoria de RH" class="wordmark-logo mb-2">
         <p class="wordmark-sub">CONSULTORIA DE RH</p>
         <p class="wordmark-tagline">PESSOAS &nbsp;|&nbsp; ESTRATÉGIA &nbsp;|&nbsp; RESULTADOS</p>
     </div>
@@ -89,12 +89,15 @@
             <div class="container">
                 <div class="cta-banner">
                     <div class="row align-items-center gy-4">
-                        <div class="col-lg-6 cta-texto">
+                        <div class="col-lg-4 text-center cta-logo">
+                            <img src="logo - lugus.jpeg" alt="LUGUS Consultoria de RH" class="cta-logo-img">
+                        </div>
+                        <div class="col-lg-4 cta-texto">
                             <p>Diagnóstico gratuito da sua área de RH</p>
                             <p>Atendimento próximo e personalizado</p>
                             <p>Soluções sob medida para o seu negócio</p>
                         </div>
-                        <div class="col-lg-6 d-flex flex-column gap-3 cta-botoes">
+                        <div class="col-lg-4 d-flex flex-column gap-3 cta-botoes">
                             <a href="https://wa.me/5511987654321" target="_blank" rel="noopener"
                                 class="btn btn-cta-escuro">
                                 <i class="bi bi-whatsapp"></i> Fale com a LUGUS RH
@@ -114,12 +117,16 @@
                 <p class="eyebrow">— LUGUS RH —</p>
 
                 <div class="lugus-carousel">
-                    <button type="button" class="carousel-label carousel-label-prev" id="btnPrev">
-                        <i class="bi bi-chevron-left"></i>
-                        <span id="labelPrev">Sobre a LUGUS RH</span>
-                    </button>
+                    <div class="carousel-nav-group">
+                        <button type="button" class="carousel-arrow" id="btnPrev" aria-label="Slide anterior">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <a href="lugus-rh.html#sobre" class="carousel-label" id="labelPrevLink">
+                            <span id="labelPrev">Sobre a LUGUS RH</span>
+                        </a>
+                    </div>
 
-                    <div class="carousel-center">
+                    <a href="lugus-rh.html#trabalhos" class="carousel-center" id="carouselCenterLink">
                         <div class="carousel-icon" id="slideIcon">
                             <i class="bi bi-people"></i>
                         </div>
@@ -134,12 +141,16 @@
                             <span class="dot active" data-index="1"></span>
                             <span class="dot" data-index="2"></span>
                         </div>
-                    </div>
+                    </a>
 
-                    <button type="button" class="carousel-label carousel-label-next" id="btnNext">
-                        <span id="labelNext">Nossos Pilares</span>
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
+                    <div class="carousel-nav-group">
+                        <a href="lugus-rh.html#pilares" class="carousel-label" id="labelNextLink">
+                            <span id="labelNext">Nossos Pilares</span>
+                        </a>
+                        <button type="button" class="carousel-arrow" id="btnNext" aria-label="Próximo slide">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -153,27 +164,35 @@
                     <div class="col-6 col-lg servico-item">
                         <div class="servico-icone"><i class="bi bi-person"></i></div>
                         <h5>Consultoria</h5>
-                        <a href="servico_consultoria.html" class="btn-saiba-mais">saiba mais &gt;</a>
+                        <a href="servico-consultoria.html" class="btn-saiba-mais">saiba mais &gt;</a>
                     </div>
                     <div class="col-6 col-lg servico-item">
                         <div class="servico-icone"><i class="bi bi-people-fill"></i></div>
                         <h5>Recrutamento &amp; Seleção</h5>
-                        <a href="servico_recrutamento.html" class="btn-saiba-mais">saiba mais &gt;</a>
+                        <a href="servico-recrutamento.html" class="btn-saiba-mais">saiba mais &gt;</a>
                     </div>
                     <div class="col-6 col-lg servico-item">
-                        <div class="servico-icone"><i class="bi bi-balance-scale"></i></div>
+                        <div class="servico-icone">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;">
+                                <line x1="12" y1="3" x2="12" y2="21"></line>
+                                <line x1="5" y1="7" x2="19" y2="7"></line>
+                                <path d="M5 7 L2 13 a3 3 0 0 0 6 0 Z"></path>
+                                <path d="M19 7 L16 13 a3 3 0 0 0 6 0 Z"></path>
+                                <rect x="9" y="19" width="6" height="2" rx="1"></rect>
+                            </svg>
+                        </div>
                         <h5>Compliance Trabalhista</h5>
-                        <a href="servico_compliance.html" class="btn-saiba-mais">saiba mais &gt;</a>
+                        <a href="servico-compliance.html" class="btn-saiba-mais">saiba mais &gt;</a>
                     </div>
                     <div class="col-6 col-lg servico-item">
                         <div class="servico-icone"><i class="bi bi-graph-up-arrow"></i></div>
                         <h5>Desenvolvimento Pessoal</h5>
-                        <a href="servico_desenvolvimento.html" class="btn-saiba-mais">saiba mais &gt;</a>
+                        <a href="servico-desenvolvimento.html" class="btn-saiba-mais">saiba mais &gt;</a>
                     </div>
                     <div class="col-6 col-lg servico-item">
                         <div class="servico-icone"><i class="bi bi-award"></i></div>
                         <h5>Qualidade Integrada</h5>
-                        <a href="servico_qualidade.html" class="btn-saiba-mais">saiba mais &gt;</a>
+                        <a href="servico-qualidade.html" class="btn-saiba-mais">saiba mais &gt;</a>
                     </div>
                 </div>
             </div>
