@@ -4,35 +4,44 @@
 
 ---
 
+## 🌐 Acesse o Projeto
+* **Website Oficial:** [https://lugusrh.com.br/](https://lugusrh.com.br/)
+
+---
+
 ## 💻 Sobre o Projeto
-O **LUGUS RH** é uma landing page focada em soluções estratégicas integrando RH, Legislação Trabalhista e Sistemas de Qualidade. Este projeto visa oferecer uma presença digital profissional e otimizada para dispositivos móveis e desktop.
+O **LUGUS RH** é uma landing page institucional focada em soluções estratégicas integrando RH, Legislação Trabalhista e Sistemas de Qualidade. Este projeto visa oferecer uma presença digital profissional, rápida e otimizada para dispositivos móveis e desktop.
 
 ---
 
 ## ✨ Funcionalidades
-- Apresentação dos serviços de consultoria oferecidos pela LUGUS
+- Apresentação completa dos serviços de consultoria oferecidos pela LUGUS.
 - **Estruturação de RH:** Cargos, salários e indicadores de desempenho (KPIs).
 - **Recrutamento & Seleção:** Hunting e suporte em entrevistas.
 - **Compliance Trabalhista:** Auditorias focadas em redução de riscos e passivos.
-- **Qualidade:** Implementação e gestão de normas ISO 9001 e IATF 16949.
+- **Qualidade Integrada:** Implementação e gestão de normas ISO 9001 e IATF 16949.
+- **Integração Direta:** Botões de Call to Action (CTA) direcionados para atendimento rápido via WhatsApp.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-- As principais ferramentas e linguagens utilizadas no desenvolvimento deste projeto:
-- **Linguagem:** HTML, CSS e JavaScript
-- **IDE:** VSCode
-- **Ferramentas:** Git, GitHub
+* **Linguagens:** HTML5, CSS3, JavaScript
+* **Controle de Versão:** Git e GitHub
+* **Ambiente de Desenvolvimento:** Visual Studio Code (VSCode)
 
 ---
 
-## 🛠️ Design
+## 📱 Design e Responsividade
 O projeto foi idealizado seguindo princípios de **Mobile First** e **Design Responsivo**: 
 - **Layout Mobile:** Fluxo vertical para navegação fluida em smartphones.
 - **Layout Desktop:** Grade multicolunas para maximização da área de visualização.
-- **Foco em UX:** Menu intuitivo, CTAs (Call to Action) estratégicos e navegação facilitada.
+- **Foco em UX:** Menu intuitivo, CTAs estratégicos e navegação facilitada.
 
 ---
 
-## ✒️ Autor
-Feito por 💻 por **Elder Henrique de Oliveira Siqueira**.
+## ⚙️ Como Executar o Projeto Localmente
+Se você quiser clonar e rodar o projeto na sua máquina:
+
+1. Clone o repositório:
+   ```bash
+   git clone [https://github.com/eldersiqueira/projeto_lugusrh.git](https://github.com/eldersiqueira/projeto_lugusrh.git)
